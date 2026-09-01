@@ -98,6 +98,16 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 .image-section { background: var(--soft); }
 .image-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; align-items: center; gap: 72px; }
 .image-layout p:not(.eyebrow), .contact-layout > div p:not(.eyebrow) { color: var(--muted); }
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  margin-top: 12px;
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-underline-offset: 0.25em;
+}
+.text-link:hover { color: var(--primary); }
 .image-placeholder { position: relative; overflow: hidden; border: 10px solid var(--white); box-shadow: var(--shadow); }
 .image-placeholder svg { display: block; width: 100%; height: auto; }
 .image-placeholder span { position: absolute; right: 18px; bottom: 14px; color: var(--white); font-size: 0.72rem; letter-spacing: 0.18em; }
