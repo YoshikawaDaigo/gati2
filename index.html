@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大倉山駅周辺に誕生する、1階から4階までの吹き抜けを備えた新商業施設の公式サイトです。">
+    <title>大倉山駅前 新商業施設（仮称）| 公式サイト</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#top" aria-label="大倉山駅前 新商業施設 トップへ">大倉山駅前 <span>新商業施設（仮称）</span></a>
+        <nav aria-label="メインナビゲーション">
+          <a href="#features">施設コンセプト</a>
+          <a href="#gallery">フロア構成</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <p class="eyebrow">New Landmark in Okurayama</p>
+          <h1 id="hero-title">まちに、空へとひらく<br>新しい居場所。</h1>
+          <p class="lead">
+            大倉山駅周辺に、新たな商業施設が誕生します。
+            1階から4階までを縦につなぐ大きな吹き抜けが、光と風、人々の気配を感じられる開放的な空間をつくります。
+          </p>
+          <a class="button" href="#features">施設コンセプトを見る</a>
+        </div>
+      </section>
+
+      <section id="features" class="section" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Concept</p>
+            <h2 id="features-title">ひらく、つながる、大倉山。</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-number">01</span>
+              <h3>空へひらく吹き抜け</h3>
+              <p>1階から4階まで続く吹き抜けが自然光を取り込み、商業フロア全体に明るさと開放感をもたらします。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number">02</span>
+              <h3>まちとつながる商業空間</h3>
+              <p>日々の買い物や食事、ふと立ち寄る時間まで。駅周辺の暮らしに新しい交流とにぎわいを生み出します。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number">03</span>
+              <h3>暮らしと重なる場所</h3>
+              <p>5階以上には住宅フロアを計画。商業と住まいが共存し、朝から夜まで人の営みが息づく場所を目指します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section image-section" aria-labelledby="gallery-title">
+        <div class="container image-layout">
+          <div>
+            <p class="eyebrow">Floor Guide</p>
+            <h2 id="gallery-title">商業と住まいを、心地よくつなぐ。</h2>
+            <p>1〜4階は中央の吹き抜けを囲む商業フロア、5階以上は住宅フロアとして計画しています。完成予想図は今後こちらに掲載予定です。</p>
+          </div>
+          <div class="image-placeholder" role="img" aria-label="商業施設の完成予想図掲載用プレースホルダー">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <rect width="640" height="400" fill="#dce7e2"/>
+              <circle cx="515" cy="72" r="40" fill="#f6f1e7"/>
+              <rect x="115" y="55" width="410" height="310" rx="3" fill="#f8f6ef"/>
+              <g fill="#8aa79b"><rect x="145" y="82" width="68" height="35"/><rect x="235" y="82" width="68" height="35"/><rect x="337" y="82" width="68" height="35"/><rect x="427" y="82" width="68" height="35"/><rect x="145" y="137" width="68" height="35"/><rect x="235" y="137" width="68" height="35"/><rect x="337" y="137" width="68" height="35"/><rect x="427" y="137" width="68" height="35"/></g>
+              <rect x="145" y="203" width="350" height="134" fill="#58776c"/>
+              <path d="M320 203v134M145 248h350M145 293h350" stroke="#dce7e2" stroke-width="6"/>
+              <path d="M265 207h110v126H265z" fill="#dce7e2" opacity=".65"/>
+              <path d="M70 365h500" stroke="#426b5d" stroke-width="5"/>
+            </svg>
+            <span>完成予想図 掲載予定</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">お問い合わせ</h2>
+            <p>施設計画に関するご質問は、こちらのフォームからお寄せください。最新情報は本サイトで順次お知らせします。</p>
+          </div>
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="field">
+              <label for="name">お名前 <span>必須</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス <span>必須</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="message">お問い合わせ内容 <span>必須</span></label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button class="button" type="submit">内容を確認する</button>
+            <p id="form-message" class="form-message" aria-live="polite"></p>
+            <p class="form-note">※ 動作確認用のため、入力内容は送信されません。</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <p>大倉山駅前 新商業施設（仮称）</p>
+        <small>&copy; <span id="year"></span> Okurayama New Commercial Facility</small>
+      </div>
+    </footer>
+  </body>
+</html>
