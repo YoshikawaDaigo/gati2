@@ -89,6 +89,11 @@ if (tenantDialog) {
     "東急ストア": "https://www.tokyu-store.co.jp/", "河合塾マナビス": "https://www.manavis.com/", "マツモトキヨシ": "https://www.matsukiyococokara.com/", "アクアトゥエンティワン": "https://www.acua21.com/", "健康堂整骨院": "https://kkd-ookurayama2.com/", "かたぎり塾": "https://katagirijuku.jp/", "横浜銀行": "https://www.boy.co.jp/", "STARBUCKS": "https://www.starbucks.co.jp/", "FamilyMart": "https://www.family.co.jp/"
   };
   const tenantsWithoutCompanyWebsite = new Set(["らーめん Shigetomi", "御菓子司 大倉山青柳"]);
+  const tenantsWithoutTenantPage = new Set(["健康堂整骨院"]);
+  const tenantPageLabels = {
+    "らーめん Shigetomi": "店舗詳細ページへ",
+    "御菓子司 大倉山青柳": "公式ホームページ"
+  };
   const tenantPhones = {
     "東急ストア": "045-546-0109", "河合塾マナビス": "045-947-2211", "マツモトキヨシ": "045-531-3761", "らーめん Shigetomi": "045-543-9226", "アクアトゥエンティワン": "045-533-3330", "健康堂整骨院": "045-544-9944", "かたぎり塾": "03-6381-6269", "横浜銀行": "045-542-8181", "STARBUCKS": "045-533-0451", "御菓子司 大倉山青柳": "045-531-0407", "FamilyMart": "045-540-0271"
   };
@@ -124,7 +129,14 @@ if (tenantDialog) {
       dialogExterior.alt = `${brand}の店舗入口イメージ`;
       dialogInterior.src = interior?.getAttribute("src") || "";
       dialogInterior.alt = interior?.getAttribute("alt") || `${brand}の内装イメージ`;
-      dialogLink.href = card.href;
+      if (tenantsWithoutTenantPage.has(brand)) {
+        dialogLink.hidden = true;
+        dialogLink.removeAttribute("href");
+      } else {
+        dialogLink.hidden = false;
+        dialogLink.href = card.href;
+        dialogLink.textContent = tenantPageLabels[brand] || "大倉山店ページを見る ↗";
+      }
       dialogPhone.textContent = tenantPhones[brand];
       dialogBusinessHours.textContent = tenantHours[brand][0];
       dialogClosed.textContent = tenantHours[brand][1];
