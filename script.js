@@ -69,6 +69,8 @@ if (tenantDialog) {
   const dialogLink = tenantDialog.querySelector("#tenant-dialog-link");
   const dialogCompany = tenantDialog.querySelector("#tenant-dialog-company");
   const dialogPhone = tenantDialog.querySelector("#tenant-dialog-phone");
+  const dialogBusinessHours = tenantDialog.querySelector("#tenant-dialog-business-hours");
+  const dialogClosed = tenantDialog.querySelector("#tenant-dialog-closed");
   const closeButton = tenantDialog.querySelector(".tenant-dialog-close");
   const tenantDescriptions = {
     "東急ストア": "日々の食卓を支える生鮮食品、惣菜、ベーカリーを扱う小規模なフードステーションを計画しています。",
@@ -84,10 +86,26 @@ if (tenantDialog) {
     "FamilyMart": "食事、飲料、日用品、各種サービスを便利に利用できるコンビニエンスストアです。"
   };
   const tenantCompanies = {
-    "東急ストア": "https://www.tokyu-store.co.jp/", "河合塾マナビス": "https://www.manavis.com/", "マツモトキヨシ": "https://www.matsukiyococokara.com/", "らーめん Shigetomi": "https://tabelog.com/kanagawa/A1401/A140204/14063435/", "アクアトゥエンティワン": "https://www.acua21.com/", "健康堂整骨院": "https://kkd-ookurayama2.com/", "かたぎり塾": "https://katagirijuku.jp/", "横浜銀行": "https://www.boy.co.jp/", "STARBUCKS": "https://www.starbucks.co.jp/", "御菓子司 大倉山青柳": "https://www.o-aoyagi.co.jp/", "FamilyMart": "https://www.family.co.jp/"
+    "東急ストア": "https://www.tokyu-store.co.jp/", "河合塾マナビス": "https://www.manavis.com/", "マツモトキヨシ": "https://www.matsukiyococokara.com/", "アクアトゥエンティワン": "https://www.acua21.com/", "健康堂整骨院": "https://kkd-ookurayama2.com/", "かたぎり塾": "https://katagirijuku.jp/", "横浜銀行": "https://www.boy.co.jp/", "STARBUCKS": "https://www.starbucks.co.jp/", "FamilyMart": "https://www.family.co.jp/"
   };
   const tenantPhones = {
-    "河合塾マナビス": "045-947-2211", "健康堂整骨院": "045-544-9944", "かたぎり塾": "03-6381-6269", "横浜銀行": "045-542-8181", "STARBUCKS": "045-533-0451", "FamilyMart": "045-540-0271"
+    "東急ストア": "045-546-0109", "河合塾マナビス": "045-947-2211", "マツモトキヨシ": "045-531-3761", "らーめん Shigetomi": "045-543-9226", "アクアトゥエンティワン": "045-533-3330", "健康堂整骨院": "045-544-9944", "かたぎり塾": "03-6381-6269", "横浜銀行": "045-542-8181", "STARBUCKS": "045-533-0451", "御菓子司 大倉山青柳": "045-531-0407", "FamilyMart": "045-540-0271"
+  };
+  const tenantHours = {
+    "東急ストア": ["7:00〜24:00", "無休（臨時休業を除く）"],
+    "河合塾マナビス": ["平日・土曜 14:00〜22:00／日曜・祝日 10:00〜18:00", "年間休館日あり"],
+    "マツモトキヨシ": ["9:00〜22:00", "無休（調剤は木・日・祝休）"],
+    "らーめん Shigetomi": ["火〜金 11:30〜14:30・18:00〜22:00／土 11:30〜14:30", "日曜・月曜（完売時終了）"],
+    "アクアトゥエンティワン": ["10:00〜18:30", "水曜（祝日は営業、1〜3月は無休）"],
+    "健康堂整骨院": ["平日 11:00〜21:00／土日祝 10:00〜19:00", "年中無休（年末年始を除く）"],
+    "かたぎり塾": ["平日 10:00〜22:00／土日 9:00〜20:00", "月曜・木曜"],
+    "横浜銀行": ["窓口 平日 9:00〜15:00／ATM 平日 7:45〜21:00・土日祝 9:00〜21:00", "窓口は土日祝休業"],
+    "STARBUCKS": ["7:00〜22:00", "不定休"],
+    "御菓子司 大倉山青柳": ["平日 9:00〜19:00／土日祝 9:00〜18:00", "木曜（行事の場合は営業）"],
+    "FamilyMart": ["24時間", "無休"]
+  };
+  const tenantEntrances = {
+    "東急ストア": "tokyu-store.png", "河合塾マナビス": "manavis.png", "マツモトキヨシ": "matsukiyo.png", "らーめん Shigetomi": "shigetomi.png", "アクアトゥエンティワン": "acua.png", "健康堂整骨院": "kenkodo.png", "かたぎり塾": "katagiri.png", "横浜銀行": "yokohama-bank.png", "STARBUCKS": "starbucks.png", "御菓子司 大倉山青柳": "aoyagi.png", "FamilyMart": "familymart.png"
   };
 
   document.querySelectorAll(".tenant-card[href]").forEach((card) => {
@@ -101,13 +119,21 @@ if (tenantDialog) {
       dialogFloor.textContent = `${floor} TENANT INFORMATION`;
       dialogTitle.textContent = shop ? `${brand}｜${shop}` : brand;
       dialogDescription.textContent = tenantDescriptions[brand] || "施設内に計画している店舗の完成イメージと詳細情報です。";
-      dialogExterior.src = "images/transport/public-side-station-v2.png";
-      dialogExterior.alt = `${brand}が入る商業施設の外観イメージ`;
+      dialogExterior.src = `images/tenants/entrances/${tenantEntrances[brand]}`;
+      dialogExterior.alt = `${brand}の店舗入口イメージ`;
       dialogInterior.src = interior?.getAttribute("src") || "";
       dialogInterior.alt = interior?.getAttribute("alt") || `${brand}の内装イメージ`;
       dialogLink.href = card.href;
-      dialogCompany.href = tenantCompanies[brand] || card.href;
-      dialogPhone.textContent = tenantPhones[brand] ? `大倉山店 電話番号：${tenantPhones[brand]}` : "電話番号：公式ページでご確認ください";
+      dialogPhone.textContent = tenantPhones[brand];
+      dialogBusinessHours.textContent = tenantHours[brand][0];
+      dialogClosed.textContent = tenantHours[brand][1];
+      if (tenantCompanies[brand]) {
+        dialogCompany.hidden = false;
+        dialogCompany.href = tenantCompanies[brand];
+      } else {
+        dialogCompany.hidden = true;
+        dialogCompany.removeAttribute("href");
+      }
       tenantDialog.showModal();
     });
   });
