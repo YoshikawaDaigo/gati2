@@ -12,13 +12,9 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="#top" aria-label="大倉山駅前 新商業施設 トップへ">大倉山駅前 <span>新商業施設（仮称）</span></a>
-        <nav aria-label="メインナビゲーション">
-          <a href="#features">施設コンセプト</a>
-          <a href="#gallery">フロア構成</a>
-          <a href="#visuals">計画イメージ</a>
-          <a href="#shops">ショップ</a>
-          <a href="#access">アクセス</a>
-          <a href="#contact">お問い合わせ</a>
+        <button class="home-menu-button" type="button" aria-expanded="false" aria-controls="home-menu"><span>HOME</span><i aria-hidden="true"></i></button>
+        <nav id="home-menu" class="home-menu" aria-label="ホームメニュー" hidden>
+          <a href="index.html#features">施設コンセプト</a><a href="index.html#gallery">フロア構成</a><a href="index.html#visuals">計画イメージ</a><a href="index.html#shops">ショップ</a><a href="index.html#access">アクセス</a><a href="index.html#contact">お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><a href="residence.html">マンションのホームページ</a><a href="history.html">制作履歴</a>
         </nav>
       </div>
     </header>
@@ -60,7 +56,7 @@
             <article class="feature-card">
               <span class="feature-number">03</span>
               <h3>暮らしと重なる場所</h3>
-              <p>5階以上には住宅フロアを計画。商業と住まいが共存し、朝から夜まで人の営みが息づく場所を目指します。</p>
+              <p>5階〜20階には住宅フロアを計画。商業と住まいが共存し、朝から夜まで人の営みが息づく場所を目指します。</p>
             </article>
           </div>
         </div>
@@ -71,14 +67,14 @@
           <div>
             <p class="eyebrow">Floor Guide</p>
             <h2 id="gallery-title">商業と住まいを、心地よくつなぐ。</h2>
-            <p>1〜4階は中央の吹き抜けを囲む商業フロア、5階以上は住宅フロアとして計画しています。光と緑を取り込む、開放的な屋内空間を目指します。</p>
+            <p>1〜4階は中央の吹き抜けを囲む商業フロア、5階〜20階は住宅フロアとして計画しています。光と緑を取り込む、開放的な屋内空間を目指します。</p>
             <a class="text-link" href="residence.html">
-              5階以上のマンション専用ページ
+              5階〜20階のマンション専用ページ
               <span aria-hidden="true">&#8594;</span>
             </a>
           </div>
           <figure class="concept-visual">
-            <img src="images/okurayama-atrium-concept.png" alt="1階から4階までをつなぐ吹き抜けを中心に、店舗、テラス、緑地を配置した商業施設のイメージ" width="1672" height="941">
+            <img src="images/okurayama-atrium-concept-v2.png" alt="1階から4階までをつなぐ吹き抜けを中心に、店舗、テラス、緑地を配置した商業施設のイメージ" width="1672" height="941">
             <figcaption>施設内観イメージ　※掲載内容は計画段階のイメージであり、実際とは異なる場合があります。</figcaption>
           </figure>
         </div>
@@ -86,8 +82,8 @@
 
       <section class="residence-promo-section" aria-label="レジデンスのご案内">
         <a class="residence-promo" href="residence.html">
-          <img src="images/okurayama-residence-lobby-atrium.png" alt="3階と4階をつなぐ吹き抜けのレジデンスロビー" width="1672" height="941" loading="lazy">
-          <span class="residence-promo-overlay"><small>OKURAYAMA RESIDENCE</small><strong>5階から始まる、空に近い暮らし。</strong><em>住戸プラン・価格・共用空間を見る →</em></span>
+          <span class="slideshow residence-promo-slideshow" data-slideshow data-interval="4000" aria-hidden="true"><img class="slideshow-slide is-active" src="images/okurayama-residence-lobby-ceiling-v2.png" alt=""><img class="slideshow-slide" src="images/okurayama-residence-entrance-v3.png" alt=""><img class="slideshow-slide" src="images/residences/3ldk-interior-v2.png" alt=""></span>
+          <span class="residence-promo-overlay"><small>OKURAYAMA RESIDENCE</small><strong>5階〜20階、空に近い暮らし。</strong><em>住戸プラン・価格・共用空間を見る →</em></span>
         </a>
       </section>
 
@@ -288,6 +284,9 @@
           </form>
         </div>
       </section>
+      <section class="residence-end-cta" aria-label="マンションのホームページへ">
+        <a href="residence.html"><img src="images/okurayama-residence-entrance-v3.png" alt="商業施設の5階から20階に計画するマンション外観" loading="lazy"><span><small>RESIDENCE</small><strong>駅前の利便と、穏やかな暮らしを。</strong><em>マンションのホームページへ →</em></span></a>
+      </section>
       <dialog id="tenant-dialog" class="tenant-dialog" aria-labelledby="tenant-dialog-title">
         <button class="tenant-dialog-close" type="button" aria-label="閉じる">×</button>
         <div class="tenant-dialog-head"><span id="tenant-dialog-floor"></span><h2 id="tenant-dialog-title"></h2><p id="tenant-dialog-description"></p></div>
@@ -300,7 +299,7 @@
     <footer>
       <div class="container footer-inner">
         <p>大倉山駅前 新商業施設（仮称）</p>
-        <small>&copy; <span id="year"></span> Okurayama New Commercial Facility　<a href="privacy.html">プライバシーポリシー</a></small>
+        <small>&copy; <span id="year"></span> Okurayama New Commercial Facility　<a href="index.html#contact">お問い合わせ</a>　<a href="privacy.html">プライバシーポリシー</a>　<a href="terms.html">利用規約</a>　<a href="residence.html">マンションのホームページへ</a>　<a href="history.html">制作履歴</a></small>
       </div>
     </footer>
   </body>

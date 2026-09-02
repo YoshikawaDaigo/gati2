@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="大倉山駅前 新商業施設の5階以上に計画されるマンションのご案内です。">
+    <meta name="description" content="大倉山駅前 新商業施設の5階から20階に計画されるマンションのご案内です。">
     <title>レジデンス｜大倉山駅前 新商業施設（仮称）</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -12,22 +12,18 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="index.html">大倉山駅前 <span>新商業施設（仮称）</span></a>
-        <nav aria-label="マンションページ ナビゲーション">
-          <a href="#entrance">外観・入口</a>
-          <a href="#concept">住まいの特徴</a>
-          <a href="#plans">住戸・価格</a>
-          <a href="#outline">計画概要</a>
-          <a href="#entry">お問い合わせ</a>
-        </nav>
+        <button class="home-menu-button" type="button" aria-expanded="false" aria-controls="home-menu"><span>HOME</span><i aria-hidden="true"></i></button>
+        <nav id="home-menu" class="home-menu" aria-label="ホームメニュー" hidden><a href="index.html#features">施設コンセプト</a><a href="index.html#gallery">フロア構成</a><a href="index.html#visuals">計画イメージ</a><a href="index.html#shops">ショップ</a><a href="index.html#access">アクセス</a><a href="index.html#contact">お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><a href="residence.html">マンションのホームページ</a><a href="history.html">制作履歴</a></nav>
       </div>
     </header>
 
     <main id="top">
       <section class="residence-hero" aria-labelledby="residence-title">
+        <div class="slideshow residence-hero-slideshow" data-slideshow data-interval="4000" aria-hidden="true"><img class="slideshow-slide is-active" src="images/okurayama-residence-lobby-ceiling-v2.png" alt=""><img class="slideshow-slide" src="images/okurayama-residence-entrance-v3.png" alt=""><img class="slideshow-slide" src="images/residences/3ldk-interior-v2.png" alt=""></div>
         <div class="container residence-hero-inner">
           <p class="eyebrow">Okurayama Residence</p>
           <h1 id="residence-title">駅前の利便と、<br>穏やかな暮らしを。</h1>
-          <p class="lead">商業施設の5階以上に計画する、新しい都市型レジデンス。日々の買い物を身近に、空に近い落ち着いた住環境を目指します。</p>
+          <p class="lead">商業施設の5階〜20階に計画する、新しい都市型レジデンス。日々の買い物を身近に、空に近い落ち着いた住環境を目指します。</p>
           <a class="button" href="#entry">最新情報を問い合わせる</a>
           <p class="hero-note">3階・4階 レジデンスロビー吹き抜けイメージ</p>
         </div>
@@ -37,8 +33,8 @@
         <div class="container residence-entrance-layout">
           <div>
             <p class="eyebrow">Residence Entrance</p>
-            <h2 id="entrance-title">商業施設の上に、5階から始まる住まい。</h2>
-            <p>1階から4階までの商業フロアと動線を分けた専用エントランスを計画。レジデンスは屋上緑化を挟んだ5階以上に配置します。</p>
+            <h2 id="entrance-title">商業施設の上に、5階〜20階の住まい。</h2>
+            <p>1階から4階までの商業フロアと動線を分けた専用エントランスを計画。レジデンスは屋上緑化を挟んだ5階から20階に配置します。</p>
           </div>
           <figure class="residence-image-card">
             <img src="images/okurayama-residence-entrance-v3.png" alt="独立した1階から4階までの商業施設の上に、植栽帯を挟んで5階からレジデンスが始まる建物外観と専用エントランスのイメージ" width="1536" height="1024">
@@ -100,7 +96,7 @@
           <dl class="outline-list">
             <div><dt>所在地</dt><dd>神奈川県横浜市港北区大倉山1-2付近（計画中）</dd></div>
             <div><dt>用途</dt><dd>共同住宅</dd></div>
-            <div><dt>住宅フロア</dt><dd>5階以上（予定）</dd></div>
+            <div><dt>住宅フロア</dt><dd>5階〜20階（予定）</dd></div>
             <div><dt>総戸数</dt><dd>52戸（賃貸19戸・分譲33戸）</dd></div>
             <div><dt>販売開始時期</dt><dd>未定</dd></div>
             <div><dt>入居時期</dt><dd>未定</dd></div>
@@ -122,7 +118,7 @@
     <footer>
       <div class="container footer-inner">
         <p>大倉山駅前 新商業施設（仮称）｜レジデンス</p>
-        <small>&copy; <span id="year"></span> Okurayama New Commercial Facility　<a href="privacy.html">プライバシーポリシー</a></small>
+        <small>&copy; <span id="year"></span> Okurayama New Commercial Facility　<a href="index.html#contact">お問い合わせ</a>　<a href="privacy.html">プライバシーポリシー</a>　<a href="terms.html">利用規約</a>　<a href="history.html">制作履歴</a></small>
       </div>
     </footer>
   </body>
