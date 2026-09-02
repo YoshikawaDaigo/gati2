@@ -245,6 +245,7 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 .tenant-dialog-hours dt { color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .12em; }
 .tenant-dialog-hours dd { margin: 5px 0 0; font-weight: 700; }
 .tenant-dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.tenant-dialog-actions [hidden] { display: none; }
 .button-secondary { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
 
 .access-section { background: var(--white); }
