@@ -21,6 +21,8 @@ body {
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
   line-height: 1.8;
 }
+body:not(.residence-page) { background-image: radial-gradient(circle at 12% 18%, rgba(203,181,128,.08), transparent 30%); }
+body:not(.residence-page) h1, body:not(.residence-page) h2, body:not(.residence-page) h3 { font-family: Georgia, "Yu Mincho", serif; }
 
 a { color: inherit; }
 
@@ -84,6 +86,8 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 .lead { max-width: 680px; margin: 28px 0 36px; color: var(--muted); font-size: 1.05rem; }
 .hero .eyebrow, .hero .lead { color: #edf5f1; }
 .hero-note { margin: 18px 0 0; color: #dce8e3; font-size: 0.72rem; }
+.station-hero-badge { display: inline-flex; align-items: center; gap: 10px; margin: 18px 0 0; padding: 9px 16px; border: 1px solid rgba(230,207,154,.75); color: #fff4d7; background: rgba(18,25,22,.62); font-weight: 700; letter-spacing: .08em; }
+.station-hero-badge span { color: #cdb374; }
 
 .button {
   display: inline-flex;
@@ -110,6 +114,7 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .feature-card { padding: 36px; border: 1px solid var(--line); background: var(--white); box-shadow: var(--shadow); }
+.feature-card::before { display: block; width: 42px; height: 5px; margin-bottom: 20px; border-top: 1px solid #b69a5e; border-bottom: 1px solid #b69a5e; content: ""; }
 .feature-card p { margin: 0; color: var(--muted); }
 .feature-number { color: #89a398; font-family: Georgia, serif; font-size: 1.5rem; }
 
@@ -203,8 +208,14 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 .tenant-dialog-images img { display: block; width: 100%; aspect-ratio: 1.5; object-fit: cover; }
 .tenant-dialog-images figcaption { padding: 9px 12px; color: var(--muted); font-size: .7rem; }
 .tenant-dialog-note { margin: 14px 0 0; color: var(--muted); font-size: .7rem; }
+.tenant-dialog-phone { margin: 0 0 18px; font-weight: 700; }
+.tenant-dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button-secondary { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
 
 .access-section { background: var(--white); }
+.station-access-banner { display: flex; align-items: center; justify-content: center; gap: 32px; margin: -12px 0 48px; padding: 24px 30px; border: 1px solid #b9a16d; background: #f7f1e4; }
+.station-access-banner strong { color: #315247; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(1.4rem, 3vw, 2.2rem); }
+.station-access-banner span { color: var(--muted); font-weight: 700; }
 .access-heading { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: end; gap: 48px; }
 .access-heading > p { margin: 0 0 20px; color: var(--muted); }
 .access-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 72px; }
@@ -417,6 +428,7 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .residence-type-card figure { border-top: 1px solid #4b4438; border-left: 0; }
   .residence-page .residence-hero { min-height: 690px; }
   .history-timeline li { grid-template-columns: 1fr; gap: 8px; }
+  .station-access-banner { align-items: flex-start; flex-direction: column; gap: 4px; }
 }
 
 @media (max-width: 480px) {

@@ -67,6 +67,8 @@ if (tenantDialog) {
   const dialogExterior = tenantDialog.querySelector("#tenant-dialog-exterior");
   const dialogInterior = tenantDialog.querySelector("#tenant-dialog-interior");
   const dialogLink = tenantDialog.querySelector("#tenant-dialog-link");
+  const dialogCompany = tenantDialog.querySelector("#tenant-dialog-company");
+  const dialogPhone = tenantDialog.querySelector("#tenant-dialog-phone");
   const closeButton = tenantDialog.querySelector(".tenant-dialog-close");
   const tenantDescriptions = {
     "東急ストア": "日々の食卓を支える生鮮食品、惣菜、ベーカリーを扱う小規模なフードステーションを計画しています。",
@@ -80,6 +82,12 @@ if (tenantDialog) {
     "STARBUCKS": "コーヒーとともに仕事、会話、休憩の時間を過ごせる地域のサードプレイスです。",
     "御菓子司 大倉山青柳": "季節の生菓子や贈答品を揃える、現代的な設えの和菓子店です。",
     "FamilyMart": "食事、飲料、日用品、各種サービスを便利に利用できるコンビニエンスストアです。"
+  };
+  const tenantCompanies = {
+    "東急ストア": "https://www.tokyu-store.co.jp/", "河合塾マナビス": "https://www.manavis.com/", "マツモトキヨシ": "https://www.matsukiyococokara.com/", "らーめん Shigetomi": "https://tabelog.com/kanagawa/A1401/A140204/14063435/", "アクアトゥエンティワン": "https://www.acua21.com/", "健康堂整骨院": "https://kkd-ookurayama2.com/", "かたぎり塾": "https://katagirijuku.jp/", "横浜銀行": "https://www.boy.co.jp/", "STARBUCKS": "https://www.starbucks.co.jp/", "御菓子司 大倉山青柳": "https://www.o-aoyagi.co.jp/", "FamilyMart": "https://www.family.co.jp/"
+  };
+  const tenantPhones = {
+    "河合塾マナビス": "045-947-2211", "健康堂整骨院": "045-544-9944", "かたぎり塾": "03-6381-6269", "横浜銀行": "045-542-8181", "STARBUCKS": "045-533-0451", "FamilyMart": "045-540-0271"
   };
 
   document.querySelectorAll(".tenant-card[href]").forEach((card) => {
@@ -98,6 +106,8 @@ if (tenantDialog) {
       dialogInterior.src = interior?.getAttribute("src") || "";
       dialogInterior.alt = interior?.getAttribute("alt") || `${brand}の内装イメージ`;
       dialogLink.href = card.href;
+      dialogCompany.href = tenantCompanies[brand] || card.href;
+      dialogPhone.textContent = tenantPhones[brand] ? `大倉山店 電話番号：${tenantPhones[brand]}` : "電話番号：公式ページでご確認ください";
       tenantDialog.showModal();
     });
   });
