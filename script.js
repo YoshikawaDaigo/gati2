@@ -48,13 +48,48 @@ if (homeMenuButton && homeMenu) {
 
 document.querySelectorAll("[data-slideshow]").forEach((slideshow) => {
   const slides = [...slideshow.querySelectorAll(".slideshow-slide")];
-  if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (slides.length < 2) return;
   let activeIndex = 0;
+  let isPaused = false;
+  let pressTimer;
+  let longPressed = false;
   const interval = Number(slideshow.dataset.interval) || 4000;
-  window.setInterval(() => {
+
+  const showNextSlide = () => {
     slides[activeIndex].classList.remove("is-active");
     activeIndex = (activeIndex + 1) % slides.length;
     slides[activeIndex].classList.add("is-active");
+  };
+
+  slideshow.classList.add("is-interactive");
+  slideshow.title = "タップで次の画像／長押しで一時停止";
+  slideshow.addEventListener("pointerdown", () => {
+    longPressed = false;
+    pressTimer = window.setTimeout(() => {
+      longPressed = true;
+      isPaused = true;
+      slideshow.classList.add("is-paused");
+    }, 550);
+  });
+  slideshow.addEventListener("pointerup", (event) => {
+    window.clearTimeout(pressTimer);
+    if (longPressed) return;
+    event.preventDefault();
+    showNextSlide();
+    isPaused = false;
+    slideshow.classList.remove("is-paused");
+  });
+  slideshow.addEventListener("pointercancel", () => window.clearTimeout(pressTimer));
+  slideshow.addEventListener("pointerleave", () => window.clearTimeout(pressTimer));
+  slideshow.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+  slideshow.addEventListener("contextmenu", (event) => event.preventDefault());
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.setInterval(() => {
+    if (!isPaused) showNextSlide();
   }, interval);
 });
 
@@ -111,7 +146,7 @@ if (tenantDialog) {
     "FamilyMart": ["24時間", "無休"]
   };
   const tenantEntrances = {
-    "東急ストア": "tokyu-store.png", "河合塾マナビス": "manavis.png", "マツモトキヨシ": "matsukiyo.png", "らーめん Shigetomi": "shigetomi.png", "アクアトゥエンティワン": "acua.png", "健康堂整骨院": "kenkodo.png", "かたぎり塾": "katagiri.png", "横浜銀行": "yokohama-bank.png", "STARBUCKS": "starbucks.png", "御菓子司 大倉山青柳": "aoyagi.png", "FamilyMart": "familymart.png"
+    "東急ストア": "tokyu-store.png", "河合塾マナビス": "manavis.png", "マツモトキヨシ": "matsukiyo.png", "らーめん Shigetomi": "shigetomi.png", "アクアトゥエンティワン": "acua.png", "健康堂整骨院": "kenkodo.png", "かたぎり塾": "katagiri.png", "横浜銀行": "yokohama-bank.png", "STARBUCKS": "starbucks.png", "御菓子司 大倉山青柳": "aoyagi.png", "FamilyMart": "familymart-v2.png"
   };
 
   document.querySelectorAll(".tenant-card[href]").forEach((card) => {
