@@ -354,6 +354,7 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
 .residence-hero .lead { color: #edf3f0; }
 .residence-entrance { background: var(--soft); }
 .residence-entrance-layout { display: grid; grid-template-columns: 0.7fr 1.3fr; align-items: center; gap: 64px; }
+.residence-entrance-layout-copy { grid-template-columns: minmax(0, 760px); }
 .residence-entrance-layout > div > p:not(.eyebrow) { color: var(--muted); }
 .residence-image-card { margin: 0; }
 .residence-image-card img { display: block; width: 100%; height: auto; box-shadow: var(--shadow); }
