@@ -146,7 +146,7 @@ if (tenantDialog) {
     "FamilyMart": ["24時間", "無休"]
   };
   const tenantEntrances = {
-    "東急ストア": "tokyu-store.png", "河合塾マナビス": "manavis.png", "マツモトキヨシ": "matsukiyo.png", "らーめん Shigetomi": "shigetomi.png", "アクアトゥエンティワン": "acua.png", "健康堂整骨院": "kenkodo.png", "かたぎり塾": "katagiri.png", "横浜銀行": "yokohama-bank.png", "STARBUCKS": "starbucks.png", "御菓子司 大倉山青柳": "aoyagi.png", "FamilyMart": "familymart-v2.png"
+    "東急ストア": "tokyu-store.png", "河合塾マナビス": "manavis.png", "マツモトキヨシ": "matsukiyo.png", "らーめん Shigetomi": "shigetomi.png", "アクアトゥエンティワン": "acua.png", "健康堂整骨院": "kenkodo.png", "かたぎり塾": "katagiri.png", "横浜銀行": "yokohama-bank.png", "STARBUCKS": "starbucks-v2.png", "御菓子司 大倉山青柳": "aoyagi.png", "FamilyMart": "familymart-v2.png"
   };
 
   document.querySelectorAll(".tenant-card[href]").forEach((card) => {
