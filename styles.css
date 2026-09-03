@@ -479,6 +479,11 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .facility-hours, .tenant-dialog-hours { align-items: flex-start; grid-template-columns: 1fr; flex-direction: column; }
   .facility-hours small { margin-left: 0; }
   .station-access-banner { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .concept-visual, .visual-card, .floor-image-card, .residence-image-card, .history-timeline figure { width: min(100%, 560px); margin-inline: auto; }
+  .concept-visual img, .visual-card > img, .floor-image-card img, .residence-image-card img, .history-timeline img { max-height: 300px; object-fit: cover; }
+  .tenant-entrance, .facility-card > img { max-height: 230px; }
+  .tenant-dialog-images img { max-height: 240px; }
+  .residence-type-card figure img { min-height: 0; max-height: 280px; }
 }
 
 @media (max-width: 480px) {
@@ -492,6 +497,14 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .tenant-grid { grid-template-columns: 1fr; }
   .exterior-split, .floorplan-split, .floor-image-grid, .plan-grid { grid-template-columns: 1fr; }
   .news-item { grid-template-columns: 1fr; gap: 5px; }
+  .hero { min-height: 500px; }
+  .residence-page .residence-hero { min-height: 580px; }
+  .concept-visual img, .visual-card > img, .floor-image-card img, .residence-image-card img, .history-timeline img { max-height: 230px; }
+  .split-visual-card { width: calc(100% - 24px); margin-inline: auto; }
+  .floorplan-split .split-visual-card { width: 100%; }
+  .tenant-entrance, .facility-card > img { max-height: 200px; }
+  .tenant-dialog-images img { max-height: 210px; }
+  .residence-type-card figure img { max-height: 230px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
