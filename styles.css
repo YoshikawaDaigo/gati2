@@ -179,6 +179,17 @@ h3 { margin: 18px 0 8px; font-size: 1.3rem; }
 .floor-image-card figcaption span, .floor-image-card figcaption strong { display: block; }
 .floor-image-card figcaption span { color: var(--muted); font-size: .78rem; }
 .floor-image-card figcaption strong { margin-bottom: 2px; color: var(--ink); font-size: .95rem; }
+.weather-roof-feature { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 42px; margin-top: 48px; padding: 34px; border: 1px solid #c6b78f; background: #ece9df; }
+.weather-roof-feature figure { overflow: hidden; margin: 0; background: var(--white); box-shadow: var(--shadow); }
+.weather-roof-feature figure img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.weather-roof-feature figcaption { padding: 10px 14px; color: var(--muted); font-size: .72rem; }
+.weather-roof-feature h4 { margin: 0 0 14px; font-size: clamp(1.45rem, 2.4vw, 2rem); line-height: 1.5; }
+.weather-roof-feature > div > p:not(.eyebrow) { margin: 0; color: var(--muted); }
+.weather-roof-feature dl { margin: 22px 0 16px; border-top: 1px solid #cfc6b4; }
+.weather-roof-feature dl div { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #cfc6b4; }
+.weather-roof-feature dt { color: var(--primary-dark); font-weight: 700; }
+.weather-roof-feature dd { margin: 0; }
+.weather-roof-feature small { display: block; color: var(--muted); font-size: .7rem; line-height: 1.7; }
 .residence-promo-section { padding: 28px; background: #10110f; }
 .residence-promo { position: relative; display: block; max-width: 1380px; min-height: 520px; overflow: hidden; margin: 0 auto; color: #fff; text-decoration: none; }
 .residence-promo-slideshow { position: absolute; inset: 0; min-height: 520px; transition: transform .8s; }
@@ -458,9 +469,10 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .residence-hero { min-height: 590px; }
   .hero-inner { padding-block: 72px; }
   .section { padding-block: 76px; }
-  .feature-grid, .image-layout, .contact-layout, .visual-heading, .visual-grid, .shops-heading, .access-heading, .access-summary, .location-grid, .plans-heading, .residence-entrance-layout, .news-layout, .floor-image-heading { grid-template-columns: 1fr; }
+  .feature-grid, .image-layout, .contact-layout, .visual-heading, .visual-grid, .shops-heading, .access-heading, .access-summary, .location-grid, .plans-heading, .residence-entrance-layout, .news-layout, .floor-image-heading, .weather-roof-feature { grid-template-columns: 1fr; }
   .news-layout { gap: 26px; }
   .floor-image-heading { gap: 10px; }
+  .weather-roof-feature { gap: 24px; padding: 24px; }
   .plan-grid { grid-template-columns: repeat(2, 1fr); }
   .tenant-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .visual-card-wide { grid-column: auto; }
