@@ -465,9 +465,11 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .header-inner { min-height: 64px; }
   nav { gap: 14px; }
   nav a { font-size: 0.78rem; }
-  .hero { min-height: 560px; background-position: 42% 31%; }
+  .hero { display: block; min-height: 0; background: #24342f; }
+  .hero-building { position: relative; display: block; height: auto; aspect-ratio: 860 / 363; }
+  .hero::after { display: none; }
   .residence-hero { min-height: 590px; }
-  .hero-inner { padding-block: 72px; }
+  .hero-inner { padding-block: 32px 40px; }
   .section { padding-block: 76px; }
   .feature-grid, .image-layout, .contact-layout, .visual-heading, .visual-grid, .shops-heading, .access-heading, .access-summary, .location-grid, .plans-heading, .residence-entrance-layout, .news-layout, .floor-image-heading, .weather-roof-feature { grid-template-columns: 1fr; }
   .news-layout { gap: 26px; }
@@ -512,7 +514,6 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   .tenant-grid { grid-template-columns: 1fr; }
   .exterior-split, .floorplan-split, .floor-image-grid, .plan-grid { grid-template-columns: 1fr; }
   .news-item { grid-template-columns: 1fr; gap: 5px; }
-  .hero { min-height: 500px; }
   .residence-page .residence-hero { min-height: 580px; }
   .concept-visual img, .visual-card > img, .floor-image-card img, .residence-image-card img, .history-timeline img { max-height: 230px; }
   .split-visual-card { width: calc(100% - 24px); margin-inline: auto; }
