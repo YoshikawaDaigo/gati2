@@ -76,6 +76,7 @@ nav a:hover, nav a:focus-visible { color: var(--primary); }
 }
 .hero::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(18, 35, 31, 0.88) 0%, rgba(18, 35, 31, 0.58) 48%, rgba(18, 35, 31, 0.12) 100%); content: ""; }
 .hero-building { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-building-mobile { display: none; }
 
 .hero-inner { position: relative; z-index: 2; padding-block: 96px; }
 .eyebrow { margin: 0 0 12px; color: var(--primary); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
@@ -466,7 +467,8 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
   nav { gap: 14px; }
   nav a { font-size: 0.78rem; }
   .hero { display: block; min-height: 0; background: #24342f; }
-  .hero-building { position: relative; display: block; height: auto; aspect-ratio: 860 / 363; }
+  .hero-building { display: none; }
+  .hero-building-mobile { display: block; width: calc(100% - 32px); max-width: 480px; height: auto; margin: 16px auto 0; }
   .hero::after { display: none; }
   .residence-hero { min-height: 590px; }
   .hero-inner { padding-block: 32px 40px; }
