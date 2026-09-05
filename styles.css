@@ -508,6 +508,7 @@ footer a { color: inherit; text-underline-offset: 0.22em; }
 @media (max-width: 480px) {
   .header-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 5px; padding-block: 8px; }
   .home-menu-button { position: absolute; top: 13px; right: 16px; }
+  .header-inner .logo { max-width: calc(100% - 110px); overflow-wrap: anywhere; }
   .home-menu { top: 100%; right: 16px; }
   h1 { font-size: 2.35rem; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 2px; padding-block: 20px; }
